@@ -11,10 +11,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 import static javax.xml.bind.annotation.XmlAccessType.FIELD;
 
 @Value
-@NoArgsConstructor(force = true)
-//@AllArgsConstructor
 @XmlAccessorType(FIELD)
 @XmlRootElement(name = "ip")
+@NoArgsConstructor(force = true)
 public final class IpLocation {
     @XmlAttribute(name = "value")
     String ip; // TODO: 2018-09-15 change to InetAddress

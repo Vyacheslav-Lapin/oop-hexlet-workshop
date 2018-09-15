@@ -24,8 +24,8 @@ import java.util.function.Supplier;
 import static lombok.AccessLevel.PRIVATE;
 
 @UtilityClass
-@FieldDefaults(level = PRIVATE)
 @SuppressWarnings("WeakerAccess")
+@FieldDefaults(level = PRIVATE)
 public class GeoBase {
 
     String URL_PREFIX = "http://ipgeobase.ru:7020/geo?ip=";
@@ -37,6 +37,12 @@ public class GeoBase {
             .andThen(StreamSource::new)
             .andThen(streamSource -> XMLInputFactory.newFactory().createXMLStreamReader(streamSource))
             .unchecked();
+
+    @NotNull
+    @SneakyThrows
+    public CompletableFuture<IpLocation> getIpLocation(String inetAddress) {
+        return getIpLocation(InetAddress.getByName(inetAddress));
+    }
 
     @NotNull
     @SneakyThrows
