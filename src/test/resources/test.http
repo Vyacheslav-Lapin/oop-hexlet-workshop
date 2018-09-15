@@ -1,0 +1,6 @@
+GET http://ipgeobase.ru:7020/geo?ip=144.206.192.6 HTTP/1.1
+Accept: application/xml
+Host: ipgeobase.ru:7020
+Accept-Charset: UTF-8
+
+###
